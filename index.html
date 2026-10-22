@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbfaf7" />
+    <meta name="description" content="Talentflow AI is a thoughtful recruitment and talent intelligence platform preview for recruiters, candidates, and employees." />
+    <title>Talentflow AI — Talent intelligence, with intention</title>
+    <script>
+      (() => {
+        let preference = 'system'
+        try {
+          const saved = localStorage.getItem('talentflow-theme')
+          if (['light', 'dark', 'system'].includes(saved)) preference = saved
+        } catch {}
+        const systemDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches
+        const theme = preference === 'system' ? (systemDark ? 'dark' : 'light') : preference
+        document.documentElement.dataset.theme = theme
+        document.documentElement.style.colorScheme = theme
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

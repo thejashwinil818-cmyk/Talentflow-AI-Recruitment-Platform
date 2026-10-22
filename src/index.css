@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+  background: var(--page-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --page-bg: #f5f7f4;
+  --surface: #fff;
+  --surface-subtle: #f8faf7;
+  --text-primary: #172b24;
+  --text-secondary: #53645a;
+  --text-muted: #748178;
+  --text-inverse: #fff;
+  --ink: var(--text-primary);
+  --muted: var(--text-muted);
+  --navy: #183b30;
+  --navy-deep: #0b121e;
+  --green: #276749;
+  --green-hover: #1f573d;
+  --lime: #c8ee72;
+  --lime-hover: #d7f49d;
+  --emerald: #2e8b62;
+  --violet: #796ab3;
+  --paper: var(--page-bg);
+  --white: var(--surface);
+  --line: #e2e9e2;
+  --line-strong: #d1ddd2;
+  --field-bg: #fff;
+  --table-head-bg: #f2f6f1;
+  --badge-bg: #edf4e9;
+  --badge-text: #315f40;
+  --chart-grid: #e3eae3;
+  --chart-track: #e8eee8;
+  --shadow-sm: 0 4px 16px rgba(27, 52, 37, .055);
+  --shadow-md: 0 14px 34px rgba(27, 52, 37, .09);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --sans: 'DM Sans', sans-serif;
+  --display: 'Manrope', sans-serif;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page-bg: #0e171f;
+  --surface: #15212b;
+  --surface-subtle: #1b2a34;
+  --text-primary: #e7efea;
+  --text-secondary: #bdcbc3;
+  --text-muted: #99aaa0;
+  --text-inverse: #102019;
+  --green: #72bd8a;
+  --green-hover: #91d6a4;
+  --lime: #c8e878;
+  --lime-hover: #d8f19b;
+  --line: #2a3b44;
+  --line-strong: #3a4d55;
+  --field-bg: #101b24;
+  --table-head-bg: #192832;
+  --badge-bg: #213a31;
+  --badge-text: #a8dcb5;
+  --chart-grid: #2a3b44;
+  --chart-track: #263840;
+  --shadow-sm: 0 4px 18px rgba(0, 0, 0, .16);
+  --shadow-md: 0 16px 36px rgba(0, 0, 0, .3);
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select { font: inherit; }
+button { color: inherit; }
+a { color: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #4f956b; outline-offset: 3px; }
+::selection { color: #172b24; background: #c8ee72; }
