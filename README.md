@@ -4,6 +4,12 @@ Talentflow is a responsive React prototype for a connected talent experience. It
 
 This is a front-end demo with illustrative content. It has no backend, and no AI model or inference service is connected.
 
+## System architecture
+
+![Talentflow system architecture](docs/system-architecture.svg)
+
+Green marks working frontend demo interactions, amber marks partial or demo-only features, and purple marks planned backend, AI, and storage work. The diagram shows the current prototype separately from proposed integrations.
+
 ## Workspaces
 
 - **Recruiter:** review hiring metrics, open roles, candidate pipeline, interviews, and talent insights; search and filter candidates, draft positions, and export sample data.

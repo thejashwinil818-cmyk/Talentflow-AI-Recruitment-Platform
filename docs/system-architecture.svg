@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1010" viewBox="0 0 1600 1010" role="img" aria-labelledby="title description">
+  <title id="title">Talentflow system architecture</title>
+  <desc id="description">A status-labeled architecture overview of the current React and Vite frontend prototype and planned backend, AI, database, and storage layers.</desc>
+  <defs>
+    <style>
+      text{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#24385e}.title{font-size:30px;font-weight:800;letter-spacing:1px}.subtitle{font-size:15px;fill:#68758c}.legend-title,.section-title{font-size:15px;font-weight:800}.section-title{fill:#fff}.layer{fill:#fff;stroke:#d3dae6;stroke-width:1.5}.portal{fill:#fff7e8;stroke:#df9b2f;stroke-width:2}.planned-layer{fill:#fbfaff;stroke:#7968d7;stroke-width:2}.ai-layer{fill:#f0edff;stroke:#6551c8;stroke-width:2}.storage-layer{fill:#f5f2ff;stroke:#7968d7;stroke-width:2}.item{font-size:13px}.small{font-size:11px;fill:#68758c}.tiny{font-size:10px;fill:#68758c}.green{fill:#e9f7ee;stroke:#58ad78}.amber{fill:#fff2d9;stroke:#df9b2f}.purple{fill:#f0edff;stroke:#7968d7}.green-text{fill:#28784a}.amber-text{fill:#93631c}.purple-text{fill:#5848b1}.card-title{font-size:15px;font-weight:750}.body{font-size:12px;fill:#53627d}.step{font-size:11px;font-weight:700}.white{fill:#fff}.navy{fill:#24385e}.purple-fill{fill:#6551c8}.green-fill{fill:#3a9b62}.amber-fill{fill:#df9b2f}.stroke-green{stroke:#3a9b62}.stroke-amber{stroke:#df9b2f}.stroke-purple{stroke:#6551c8}</style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#63718a"/></marker>
+    <marker id="dasharrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#7968d7"/></marker>
+  </defs>
+  <rect width="1600" height="1010" fill="#f7f8fb"/>
+
+  <text x="30" y="42" class="title">TALENTFLOW</text>
+  <text x="238" y="40" class="subtitle">AI-Powered Recruitment and Talent Management — System Architecture</text>
+  <rect x="1078" y="12" width="492" height="58" rx="10" fill="#fff" stroke="#d3dae6"/>
+  <text x="1094" y="29" class="legend-title">STATUS LEGEND</text>
+  <circle cx="1102" cy="43" r="6" class="green-fill"/><text x="1115" y="47" class="small green-text" font-weight="700">GREEN — implemented in the current frontend prototype</text>
+  <circle cx="1102" cy="57" r="6" class="amber-fill"/><text x="1115" y="61" class="small amber-text" font-weight="700">AMBER — partial or demo-only</text>
+  <circle cx="1343" cy="57" r="6" class="purple-fill"/><text x="1356" y="61" class="small purple-text" font-weight="700">PURPLE — planned</text>
+  <text x="30" y="66" class="small">Solid arrows show current demo interactions · Dashed arrows show planned integrations</text>
+
+  <g>
+    <rect x="30" y="82" width="500" height="34" rx="17" fill="#fff" stroke="#24385e" stroke-width="2"/><text x="280" y="104" text-anchor="middle" class="card-title">Recruiter / HR</text>
+    <rect x="550" y="82" width="500" height="34" rx="17" fill="#fff" stroke="#24385e" stroke-width="2"/><text x="800" y="104" text-anchor="middle" class="card-title">Candidate / Job Seeker</text>
+    <rect x="1070" y="82" width="500" height="34" rx="17" fill="#fff" stroke="#24385e" stroke-width="2"/><text x="1320" y="104" text-anchor="middle" class="card-title">Employee</text>
+    <path d="M280 116v20m520-20v20m520-20v20" stroke="#63718a" stroke-width="2" marker-end="url(#arrow)"/>
+  </g>
+
+  <rect x="30" y="139" width="1540" height="298" rx="14" class="layer"/>
+  <rect x="30" y="139" width="1540" height="31" rx="14" fill="#24385e"/>
+  <text x="48" y="160" class="section-title">1  LAYER 1 — FRONTEND APPLICATION (React + Vite)</text>
+  <rect x="1320" y="144" width="235" height="21" rx="10" class="amber"/><text x="1438" y="159" text-anchor="middle" class="tiny amber-text" font-weight="800">PROTOTYPE — UI demo, no backend</text>
+
+  <g>
+    <rect x="45" y="180" width="490" height="194" rx="12" class="portal"/>
+    <text x="62" y="205" class="card-title amber-text">Recruiter Portal</text><text x="515" y="204" text-anchor="end" class="tiny amber-text" font-weight="800">PARTIAL</text>
+    <rect x="60" y="215" width="460" height="25" rx="6" class="green"/><circle cx="74" cy="227" r="8" class="green-fill"/><path d="m70 227 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="89" y="232" class="item green-text">Dashboard, KPI cards, hiring funnel and reports</text>
+    <rect x="60" y="245" width="460" height="25" rx="6" class="green"/><circle cx="74" cy="257" r="8" class="green-fill"/><path d="m70 257 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="89" y="262" class="item green-text">Candidate pipeline, search, filters and stage progression</text>
+    <rect x="60" y="275" width="460" height="25" rx="6" class="amber"/><circle cx="74" cy="287" r="8" class="amber-fill"/><text x="74" y="291" text-anchor="middle" class="white" font-size="11" font-weight="800">!</text><text x="89" y="292" class="item amber-text">Job creation interface and sample positions</text>
+    <rect x="60" y="305" width="460" height="25" rx="6" class="green"/><circle cx="74" cy="317" r="8" class="green-fill"/><path d="m70 317 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="89" y="322" class="item green-text">Interview and notification previews</text>
+    <rect x="60" y="335" width="460" height="25" rx="6" class="purple"/><circle cx="74" cy="347" r="8" class="purple-fill"/><text x="74" y="351" text-anchor="middle" class="white" font-size="12" font-weight="800">•</text><text x="89" y="352" class="item purple-text">Real AI ranking and persistent job management</text>
+  </g>
+
+  <g>
+    <rect x="555" y="180" width="490" height="194" rx="12" class="portal"/>
+    <text x="572" y="205" class="card-title amber-text">Candidate Portal</text><text x="1025" y="204" text-anchor="end" class="tiny amber-text" font-weight="800">PARTIAL</text>
+    <rect x="570" y="215" width="460" height="25" rx="6" class="green"/><circle cx="584" cy="227" r="8" class="green-fill"/><path d="m580 227 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="599" y="232" class="item green-text">Job listings, search and location filters</text>
+    <rect x="570" y="245" width="460" height="25" rx="6" class="green"/><circle cx="584" cy="257" r="8" class="green-fill"/><path d="m580 257 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="599" y="262" class="item green-text">Saved jobs, application tracking and profile editing</text>
+    <rect x="570" y="275" width="460" height="25" rx="6" class="amber"/><circle cx="584" cy="287" r="8" class="amber-fill"/><text x="584" y="291" text-anchor="middle" class="white" font-size="11" font-weight="800">!</text><text x="599" y="292" class="item amber-text">Sample match scores</text>
+    <rect x="570" y="305" width="460" height="25" rx="6" class="purple"/><circle cx="584" cy="317" r="8" class="purple-fill"/><text x="584" y="321" text-anchor="middle" class="white" font-size="12" font-weight="800">•</text><text x="599" y="322" class="item purple-text">Real AI matching, resume upload and backend persistence</text>
+    <text x="572" y="352" class="small">Demo profile and activity are browser-based.</text>
+  </g>
+
+  <g>
+    <rect x="1065" y="180" width="490" height="194" rx="12" class="portal"/>
+    <text x="1082" y="205" class="card-title amber-text">Employee Talent Portal</text><text x="1535" y="204" text-anchor="end" class="tiny amber-text" font-weight="800">PARTIAL</text>
+    <rect x="1080" y="215" width="460" height="25" rx="6" class="green"/><circle cx="1094" cy="227" r="8" class="green-fill"/><path d="m1090 227 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="1109" y="232" class="item green-text">Employee dashboard and skill visualization</text>
+    <rect x="1080" y="245" width="460" height="25" rx="6" class="green"/><circle cx="1094" cy="257" r="8" class="green-fill"/><path d="m1090 257 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="1109" y="262" class="item green-text">Development milestones and learning cards</text>
+    <rect x="1080" y="275" width="460" height="25" rx="6" class="green"/><circle cx="1094" cy="287" r="8" class="green-fill"/><path d="m1090 287 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/><text x="1109" y="292" class="item green-text">Demo progress updates and resource panels</text>
+    <rect x="1080" y="305" width="460" height="40" rx="6" class="purple"/><circle cx="1094" cy="325" r="8" class="purple-fill"/><text x="1094" y="329" text-anchor="middle" class="white" font-size="12" font-weight="800">•</text><text x="1109" y="322" class="item purple-text">AI Talent Twin, skill-gap analysis and</text><text x="1109" y="337" class="item purple-text">personalized learning engine</text>
+  </g>
+
+  <rect x="45" y="383" width="1510" height="42" rx="9" fill="#f2f5fa" stroke="#cbd4e2"/>
+  <text x="62" y="409" class="small" font-weight="800">SHARED UI &amp; ACCOUNT LAYER</text>
+  <rect x="282" y="391" width="300" height="26" rx="7" class="green"/><text x="432" y="408" text-anchor="middle" class="small green-text" font-weight="700">✓ Shared components and navigation</text>
+  <rect x="592" y="391" width="260" height="26" rx="7" class="green"/><text x="722" y="408" text-anchor="middle" class="small green-text" font-weight="700">✓ Light / dark / system themes</text>
+  <rect x="862" y="391" width="325" height="26" rx="7" class="amber"/><text x="1024" y="408" text-anchor="middle" class="small amber-text" font-weight="700">! Demo authentication and role-based access</text>
+  <rect x="1197" y="391" width="340" height="26" rx="7" class="purple"/><text x="1367" y="408" text-anchor="middle" class="small purple-text" font-weight="700">● Secure server-side authentication (planned)</text>
+
+  <path d="M800 437v17" stroke="#7968d7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dasharrow)"/>
+  <rect x="30" y="457" width="1540" height="123" rx="14" class="planned-layer"/>
+  <rect x="30" y="457" width="1540" height="30" rx="14" fill="#7765d2"/>
+  <text x="48" y="478" class="section-title">2  LAYER 2 — BACKEND API LAYER · Node.js + Express</text>
+  <rect x="1390" y="461" width="165" height="21" rx="10" class="purple"/><text x="1472" y="476" text-anchor="middle" class="tiny purple-text" font-weight="800">PLANNED — not built</text>
+  <g class="item purple-text" text-anchor="middle">
+    <rect x="45" y="496" width="292" height="31" rx="7" class="purple"/><text x="191" y="516">Authentication &amp; authorization</text>
+    <rect x="347" y="496" width="292" height="31" rx="7" class="purple"/><text x="493" y="516">User &amp; profile management</text>
+    <rect x="649" y="496" width="292" height="31" rx="7" class="purple"/><text x="795" y="516">Job management</text>
+    <rect x="951" y="496" width="292" height="31" rx="7" class="purple"/><text x="1097" y="516">Application management</text>
+    <rect x="1253" y="496" width="302" height="31" rx="7" class="purple"/><text x="1404" y="516">Resume processing API</text>
+    <rect x="45" y="535" width="367" height="31" rx="7" class="purple"/><text x="228" y="555">AI orchestration &amp; matching API</text>
+    <rect x="422" y="535" width="367" height="31" rx="7" class="purple"/><text x="605" y="555">Talent development &amp; learning API</text>
+    <rect x="799" y="535" width="367" height="31" rx="7" class="purple"/><text x="982" y="555">What-if simulation API</text>
+    <rect x="1176" y="535" width="379" height="31" rx="7" class="purple"/><text x="1365" y="555">Analytics &amp; notifications</text>
+  </g>
+
+  <path d="M800 580v17" stroke="#7968d7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dasharrow)"/>
+  <rect x="30" y="600" width="1540" height="150" rx="14" class="ai-layer"/>
+  <rect x="30" y="600" width="1540" height="30" rx="14" fill="#6551c8"/>
+  <text x="48" y="621" class="section-title">3  LAYER 3 — AI INTELLIGENCE ENGINE</text>
+  <rect x="1365" y="604" width="190" height="21" rx="10" fill="#fff"/><text x="1460" y="619" text-anchor="middle" class="tiny purple-text" font-weight="800">PLANNED — no real AI built</text>
+  <g>
+    <rect x="45" y="642" width="292" height="94" rx="9" fill="#fff" stroke="#7968d7" stroke-width="1.5"/><circle cx="65" cy="662" r="12" class="purple-fill"/><text x="65" y="666" text-anchor="middle" class="white" font-size="12" font-weight="800">1</text><text x="84" y="666" class="card-title purple-text">AI Resume Intelligence</text><text x="60" y="690" class="body">PDF extraction; skills, experience,</text><text x="60" y="708" class="body">education, projects and certifications</text>
+    <rect x="347" y="642" width="292" height="94" rx="9" fill="#fff" stroke="#7968d7" stroke-width="1.5"/><circle cx="367" cy="662" r="12" class="purple-fill"/><text x="367" y="666" text-anchor="middle" class="white" font-size="12" font-weight="800">2</text><text x="386" y="666" class="card-title purple-text">AI Job Matching</text><text x="362" y="690" class="body">Candidate-job comparison, score and</text><text x="362" y="708" class="body">skill breakdown with explanations</text>
+    <rect x="649" y="642" width="292" height="94" rx="9" fill="#fff" stroke="#7968d7" stroke-width="1.5"/><circle cx="669" cy="662" r="12" class="purple-fill"/><text x="669" y="666" text-anchor="middle" class="white" font-size="12" font-weight="800">3</text><text x="688" y="666" class="card-title purple-text">AI Talent Twin</text><text x="664" y="690" class="body">Unified candidate / employee profile;</text><text x="664" y="708" class="body">strengths, gaps and proficiency levels</text>
+    <rect x="951" y="642" width="292" height="94" rx="9" fill="#fff" stroke="#7968d7" stroke-width="1.5"/><circle cx="971" cy="662" r="12" class="purple-fill"/><text x="971" y="666" text-anchor="middle" class="white" font-size="12" font-weight="800">4</text><text x="990" y="666" class="card-title purple-text">Skill Gaps &amp; Learning</text><text x="966" y="690" class="body">Current vs. target skills, gap priority</text><text x="966" y="708" class="body">and personalized learning suggestions</text>
+    <rect x="1253" y="642" width="302" height="94" rx="9" fill="#fff" stroke="#7968d7" stroke-width="1.5"/><circle cx="1273" cy="662" r="12" class="purple-fill"/><text x="1273" y="666" text-anchor="middle" class="white" font-size="12" font-weight="800">5</text><text x="1292" y="666" class="card-title purple-text">What-If Skill Simulator</text><text x="1268" y="690" class="body">Hypothetical skill improvement and</text><text x="1268" y="708" class="body">before / after match comparison</text>
+  </g>
+
+  <path d="M800 750v17" stroke="#7968d7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dasharrow)"/>
+  <rect x="30" y="770" width="1540" height="104" rx="14" class="storage-layer"/>
+  <rect x="30" y="770" width="1540" height="29" rx="14" fill="#7968d7"/>
+  <text x="48" y="790" class="section-title">4  LAYER 4 — DATABASE AND STORAGE</text><text x="465" y="790" class="small white">PLANNED · technology to be finalized</text>
+  <g text-anchor="middle" class="small purple-text" font-weight="650">
+    <rect x="45" y="811" width="185" height="48" rx="8" class="purple"/><text x="137" y="832">User accounts</text><text x="137" y="848">and roles</text>
+    <rect x="237" y="811" width="185" height="48" rx="8" class="purple"/><text x="329" y="832">Candidate &amp;</text><text x="329" y="848">employee profiles</text>
+    <rect x="429" y="811" width="185" height="48" rx="8" class="purple"/><text x="521" y="832">Jobs &amp;</text><text x="521" y="848">applications</text>
+    <rect x="621" y="811" width="185" height="48" rx="8" class="purple"/><text x="713" y="832">Resume metadata</text><text x="713" y="848">&amp; secure files</text>
+    <rect x="813" y="811" width="185" height="48" rx="8" class="purple"/><text x="905" y="832">Skills &amp; talent</text><text x="905" y="848">profiles</text>
+    <rect x="1005" y="811" width="185" height="48" rx="8" class="purple"/><text x="1097" y="832">Match results</text><text x="1097" y="848">&amp; explanations</text>
+    <rect x="1197" y="811" width="185" height="48" rx="8" class="purple"/><text x="1289" y="832">Skill gaps &amp;</text><text x="1289" y="848">learning plans</text>
+    <rect x="1389" y="811" width="166" height="48" rx="8" class="purple"/><text x="1472" y="832">Learning progress</text><text x="1472" y="848">&amp; simulations</text>
+  </g>
+
+  <rect x="30" y="886" width="1540" height="100" rx="14" fill="#fff" stroke="#24385e" stroke-width="2"/>
+  <text x="48" y="909" class="card-title">END-TO-END BUSINESS WORKFLOW</text>
+  <text x="1548" y="908" text-anchor="end" class="tiny">Green = frontend demo · Amber = partial · Purple = planned AI / backend</text>
+  <g text-anchor="middle">
+    <rect x="45" y="920" width="126" height="49" rx="8" class="purple"/><circle cx="59" cy="934" r="9" class="purple-fill"/><text x="59" y="938" class="white" font-size="10" font-weight="800">1</text><text x="108" y="940" class="step purple-text">Resume</text><text x="108" y="956" class="step purple-text">upload</text>
+    <path d="M173 944h9" stroke="#7968d7" stroke-width="2" marker-end="url(#dasharrow)"/>
+    <rect x="186" y="920" width="126" height="49" rx="8" class="purple"/><circle cx="200" cy="934" r="9" class="purple-fill"/><text x="200" y="938" class="white" font-size="10" font-weight="800">2</text><text x="249" y="940" class="step purple-text">Resume</text><text x="249" y="956" class="step purple-text">intelligence</text>
+    <path d="M314 944h9" stroke="#7968d7" stroke-width="2" marker-end="url(#dasharrow)"/>
+    <rect x="327" y="920" width="126" height="49" rx="8" class="purple"/><circle cx="341" cy="934" r="9" class="purple-fill"/><text x="341" y="938" class="white" font-size="10" font-weight="800">3</text><text x="390" y="940" class="step purple-text">Candidate</text><text x="390" y="956" class="step purple-text">profile</text>
+    <path d="M455 944h9" stroke="#7968d7" stroke-width="2" marker-end="url(#dasharrow)"/>
+    <rect x="468" y="920" width="126" height="49" rx="8" class="purple"/><circle cx="482" cy="934" r="9" class="purple-fill"/><text x="482" y="938" class="white" font-size="10" font-weight="800">4</text><text x="531" y="940" class="step purple-text">AI job</text><text x="531" y="956" class="step purple-text">matching</text>
+    <path d="M596 944h9" stroke="#7968d7" stroke-width="2" marker-end="url(#dasharrow)"/>
+    <rect x="609" y="920" width="126" height="49" rx="8" class="purple"/><circle cx="623" cy="934" r="9" class="purple-fill"/><text x="623" y="938" class="white" font-size="10" font-weight="800">5</text><text x="672" y="940" class="step purple-text">Explainable</text><text x="672" y="956" class="step purple-text">match results</text>
+    <path d="M737 944h9" stroke="#df9b2f" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="750" y="920" width="126" height="49" rx="8" class="amber"/><circle cx="764" cy="934" r="9" class="amber-fill"/><text x="764" y="938" class="white" font-size="10" font-weight="800">6</text><text x="813" y="940" class="step amber-text">Human recruiter</text><text x="813" y="956" class="step amber-text">review</text>
+    <path d="M878 944h9" stroke="#63718a" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="891" y="920" width="126" height="49" rx="8" class="green"/><circle cx="905" cy="934" r="9" class="green-fill"/><text x="905" y="938" class="white" font-size="10" font-weight="800">7</text><text x="954" y="948" class="step green-text">Hiring</text>
+    <path d="M1019 944h9" stroke="#7968d7" stroke-width="2" marker-end="url(#dasharrow)"/>
+    <rect x="1032" y="920" width="126" height="49" rx="8" class="purple"/><circle cx="1046" cy="934" r="9" class="purple-fill"/><text x="1046" y="938" class="white" font-size="10" font-weight="800">8</text><text x="1095" y="940" class="step purple-text">Employee</text><text x="1095" y="956" class="step purple-text">Talent Twin</text>
+    <path d="M1160 944h9" stroke="#7968d7" stroke-width="2" marker-end="url(#dasharrow)"/>
+    <rect x="1173" y="920" width="126" height="49" rx="8" class="purple"/><circle cx="1187" cy="934" r="9" class="purple-fill"/><text x="1187" y="938" class="white" font-size="10" font-weight="800">9</text><text x="1236" y="940" class="step purple-text">Skill gap</text><text x="1236" y="956" class="step purple-text">analysis</text>
+    <path d="M1301 944h9" stroke="#df9b2f" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="1314" y="920" width="126" height="49" rx="8" class="amber"/><circle cx="1328" cy="934" r="9" class="amber-fill"/><text x="1328" y="938" class="white" font-size="10" font-weight="800">10</text><text x="1377" y="940" class="step amber-text">Learning</text><text x="1377" y="956" class="step amber-text">recommendations</text>
+    <path d="M1442 944h9" stroke="#7968d7" stroke-width="2" marker-end="url(#dasharrow)"/>
+    <rect x="1455" y="920" width="100" height="49" rx="8" class="purple"/><circle cx="1469" cy="934" r="9" class="purple-fill"/><text x="1469" y="938" class="white" font-size="10" font-weight="800">11</text><text x="1510" y="940" class="step purple-text">What-if</text><text x="1510" y="956" class="step purple-text">simulation</text>
+  </g>
+  <rect x="45" y="974" width="1510" height="1" fill="#d3dae6"/>
+  <text x="800" y="999" text-anchor="middle" class="small" font-weight="700">AI can support recruitment and development; the human recruiter makes the final hiring decision.</text>
+</svg>
