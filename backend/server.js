@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import bcrypt from 'bcryptjs'
-import Database from 'better-sqlite3'
+import { DatabaseSync } from 'node:sqlite'
 import multer from 'multer'
 import mammoth from 'mammoth'
 import * as pdfjs from 'pdfjs-dist/legacy/build/pdf.mjs'
@@ -22,8 +22,21 @@ try {
 } catch { /* .env is optional; defaults below are suitable for local development. */ }
 const port = Number(process.env.PORT || 3001)
 const frontend = process.env.FRONTEND_ORIGIN || 'http://localhost:5173'
-const db = new Database(path.resolve(here, '..', process.env.DATABASE_FILE || 'backend/talentflow.sqlite'))
+const db = new DatabaseSync(path.resolve(here, '..', process.env.DATABASE_FILE || 'backend/talentflow.sqlite'))
 const privateResumeDir = path.join(here, 'private-resumes')
+
+db.pragma = (statement) => db.prepare(`PRAGMA ${statement}`).all()
+db.transaction = (callback) => () => {
+  db.exec('BEGIN')
+  try {
+    const result = callback()
+    db.exec('COMMIT')
+    return result
+  } catch (error) {
+    db.exec('ROLLBACK')
+    throw error
+  }
+}
 mkdirSync(privateResumeDir, { recursive: true })
 for (const entry of readdirSync(privateResumeDir, { withFileTypes: true })) {
   if (entry.isFile()) unlinkSync(path.join(privateResumeDir, entry.name))
